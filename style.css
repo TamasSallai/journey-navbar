@@ -1,0 +1,125 @@
+.nav-container {
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-bar {
+  max-width: 1448px;
+  height: 75px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+}
+
+.nav-menu {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 75px;
+  padding: 0.5rem 1.1rem;
+  font-size: 1.1rem;
+}
+
+.nav-link.active {
+  background-color: #e9ecf5;
+  font-weight: 700;
+}
+
+.nav-link:hover {
+  background-color: #e9ecf5;
+}
+
+#review:target {
+  background-color: aquamarine;
+}
+
+.push-to-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+@media (max-width: 50rem) {
+  .nav-menu {
+    position: fixed;
+    top: 75px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: 266px;
+    background-color: #ffffff;
+    transition: transform 800ms, opacity 700ms, visibility 700ms;
+  }
+
+  .nav-menu[data-visible="false"] {
+    visibility: hidden;
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  .nav-menu[data-visible="true"] {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-link {
+    width: 100%;
+  }
+
+  .push-to-right {
+    margin-left: 0;
+  }
+}
+
+.nav-toggle {
+  display: block;
+  position: fixed;
+  top: 1.4rem;
+  right: 1.8rem;
+  z-index: 1000;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 0;
+  background: transparent;
+  background-image: url(../icons/bars-solid.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.nav-toggle[aria-expanded="true"] {
+  background-image: url(../icons/x-solid.svg);
+}
+
+@media (min-width: 50rem) {
+  .nav-toggle {
+    display: none;
+  }
+}
